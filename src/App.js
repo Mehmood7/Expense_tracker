@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import {Title} from './compos/Title'
+import {Bal} from './compos/Bal'
+import {IncExp} from './compos/IncExp'
+import {TransList} from './compos/TransList'
+import {AddTrans} from './compos/AddTrans'
+import { GlobalContext } from './context/GlobalContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className= "wrapper">
+      <GlobalContext>
+        <Title text = "Expense tracker app"> Hi</Title>
+        <Bal/>
+        <IncExp/>
+        <TransList/>
+        <AddTrans/>
+      </GlobalContext>
     </div>
   );
 }
